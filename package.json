@@ -44,7 +44,7 @@
         "type-coverage": "2.24.1"
     },
     "author": "paul-clavier",
-    "repository": "paul-clavier/mugi-blocks-ts",
+    "repository": "paul-clavier/mugi-blocks",
     "homepage": "https://github.com/paul-clavier/mugi-blocks#readme",
     "bugs": "https://github.com/paul-clavier/mugi-blocks/issues",
     "license": "MIT"

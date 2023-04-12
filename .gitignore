@@ -1,2 +1,19 @@
 node_modules
 dist
+.idea
+
+# IDE
+!.idea
+.idea/*
+!.idea/runConfigurations
+!.idea/codeStyles
+!.idea/inspectionProfiles
+!.idea/prettier.xml
+!.idea/webResources.xml
+!.idea/icon.svg
+!.idea/vcs.xml
+!.idea/externalDependencies.xml
+!.idea/modules.xml
+!.idea/frontend.iml
+!.idea/file.template.settings.xml
+!.idea/fileTemplates
