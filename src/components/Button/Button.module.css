@@ -1,3 +1,105 @@
 .button {
-    background-color: red;
+    --button-border: 0.125rem;
+
+    border-radius: 0.25rem;
+    padding: calc(0.5rem - var(--button-border))
+        calc(1rem - var(--button-border));
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: var(--weight-medium);
+    line-height: 1rem;
+    cursor: pointer;
+    letter-spacing: 0.0188rem;
+    transition: background-color var(--color-transition-specs),
+        color var(--color-transition-specs), border-color var(--color-transition-specs);
+    white-space: nowrap;
+}
+
+/** Icon */
+.button svg {
+    height: 1rem;
+    width: 1rem;
+}
+
+.button:not(.iconOnly) svg {
+    margin-right: 0.5rem;
+}
+
+.iconOnly {
+    padding: 0.375rem;
+    border-radius: 50%;
+}
+
+/** Primary */
+.primary,
+.primary:focus {
+    background-color: var(--primary-500);
+    color: var(--white);
+    border: var(--button-border) solid var(--primary-500);
+}
+
+.primary:not(:disabled):hover {
+    background-color: var(--primary-600);
+    color: var(--white);
+}
+
+.primary:not(:disabled):active {
+    background-color: var(--primary-900);
+    color: var(--white);
+}
+
+/** Secondary */
+.secondary,
+.secondary:focus {
+    background-color: var(--black-500);
+    color: var(--white);
+    border: var(--button-border) solid var(--black-500);
+}
+
+.secondary:not(:disabled):hover {
+    background-color: var(--black-600);
+    color: var(--white);
+}
+
+.secondary:not(:disabled):active {
+    background-color: var(--black-900);
+    color: var(--white);
+}
+
+/** Tertiary */
+.tertiary,
+.tertiary:focus {
+    background-color: var(--background);
+    color: var(--black);
+    border: var(--button-border) solid var(--black-500);
+}
+
+.tertiary:not(:disabled):hover {
+    background-color: var(--black-100);
+    color: var(--black);
+}
+
+.tertiary:not(:disabled):active {
+    background-color: var(--black-200);
+    color: var(--black);
+}
+
+
+
+/** States */
+
+.button:focus-visible {
+    outline: none;
+}
+
+.button:disabled {
+    background-color: var(--black-200);
+    border: none;
+    cursor: not-allowed;
+    color: var(--black-300);
+    transition: none;
 }
