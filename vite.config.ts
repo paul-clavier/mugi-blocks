@@ -2,6 +2,7 @@ import react from "@vitejs/plugin-react-swc";
 import * as path from "path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import svgr from "vite-plugin-svgr";
 import { dependencies } from "./package.json";
 
 // https://vitejs.dev/config/
@@ -11,6 +12,7 @@ export default defineConfig({
         dts({
             include: ["src/components", "src/index.ts"],
         }),
+        svgr(),
     ],
     build: {
         lib: {
