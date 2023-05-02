@@ -7,6 +7,7 @@ import { dependencies } from "./package.json";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: "/mugi-blocks/",
     plugins: [
         react(),
         dts({
