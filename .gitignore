@@ -13,6 +13,6 @@ dist
 !.idea/vcs.xml
 !.idea/externalDependencies.xml
 !.idea/modules.xml
-!.idea/frontend.iml
+!.idea/mugi-blocks.iml
 !.idea/file.template.settings.xml
 !.idea/fileTemplates
