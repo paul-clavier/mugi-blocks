@@ -2,6 +2,61 @@
     display: flex;
     flex-direction: row;
     gap: 5rem;
+    min-height: 100vh;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    padding: 1rem;
+    width: 20rem;
+    background-color: var(--primary-900);
+    color: var(--primary-100);
+}
+
+.demoArea {
+    padding: 4rem;
+    /* stylelint-disable-next-line property-disallowed-list */
+    margin-left: 20rem;
+    overflow: auto;
+}
+
+.componentList {
+    list-style: none;
+    padding: 0;
+}
+
+.componentElement {
+    margin-top: 0.5rem;
+}
+
+.componentButton {
+    --padding-button: 0.5rem;
+    --border-hover: 0.1rem;
+    --border-selected: 0.18rem;
+    --border-radius: 0.36rem;
+
+    text-align: left;
+    width: 16rem;
+    color: var(--primary-100);
+    padding: var(--padding-button);
+}
+
+.componentButton:hover {
+    padding: calc(var(--padding-button) - var(--border-hover));
+    background-color: var(--primary-600);
+    border: var(--border-hover) solid var(--primary-200);
+    border-radius: var(--border-radius);
+}
+
+.componentButton.selected {
+    font-weight: var(--weight-bold);
+    padding: calc(var(--padding-button) - var(--border-selected));
+    background-color: var(--primary-100);
+    color: var(--primary-800);
+    border: var(--border-selected) solid var(--primary-200);
+    border-radius: var(--border-radius);
 }
 
 .section {
@@ -9,4 +64,11 @@
     height: min-content;
     display: grid;
     grid-gap: 1rem;
+}
+
+.columnSection {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    margin-top: 1rem;
 }

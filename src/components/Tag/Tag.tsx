@@ -2,7 +2,7 @@ import classnames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import styles from "./Tag.module.css";
 
-interface TagProps {
+export interface TagProps {
     className?: string;
     type?: "square" | "round";
     color?: "primary" | "success" | "warning" | "danger";

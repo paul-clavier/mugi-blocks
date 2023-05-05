@@ -11,10 +11,14 @@
 }
 
 .square {
+    --border-width: 0.0625rem;
+
     border-radius: 0.25rem;
 }
 
 .round {
+    --border-width: 0.125rem;
+
     border-radius: 1rem;
 }
 
@@ -23,28 +27,28 @@
 .primary {
     background-color: var(--primary-100);
     color: var(--primary-500);
-    border: 0.0625rem solid var(--primary-500);
+    border: var(--border-width) solid var(--primary-500);
 }
 
 /** Success */
 .success {
     background-color: var(--success-100);
     color: var(--success-600);
-    border: 0.0625rem solid var(--success-500);
+    border: var(--border-width) solid var(--success-500);
 }
 
 /** Warning */
 .warning {
     background-color: var(--warning-100);
     color: var(--warning-600);
-    border: 0.0625rem solid var(--warning-500);
+    border: var(--border-width) solid var(--warning-500);
 }
 
 /** Danger */
 .danger {
     background-color: var(--danger-100);
     color: var(--danger-500);
-    border: 0.0625rem solid var(--danger-500);
+    border: var(--border-width) solid var(--danger-500);
 }
 
 /** Icon */

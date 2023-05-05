@@ -1,80 +1,70 @@
+import classnames from "classnames";
+import { useState } from "react";
 import styles from "./App.module.css";
-import { Button } from "./components/Button";
-import { Tag } from "./components/Tag";
-import { BulbIcon, CalendarIcon } from "./icons";
+import { ButtonDemo } from "./components/Button";
+import { TagDemo } from "./components/Tag";
 import "./styles/constants.css";
 import "./styles/global.css";
 
+const components = ["button", "tag"] as const;
+type Component = typeof components[number];
+
+interface ComponentChoice {
+    value: Component;
+    label: string;
+}
+
+const componentChoices: ComponentChoice[] = [
+    {
+        value: "button",
+        label: "Button",
+    },
+    {
+        value: "tag",
+        label: "Tag",
+    },
+];
+
+const ComponentDemo = ({ component }: { component: Component | null }) => {
+    if (!component) return null;
+    switch (component) {
+        case "button":
+            return <ButtonDemo />;
+        case "tag":
+            return <TagDemo />;
+    }
+};
+
 const App = () => {
+    const [component, setComponent] = useState<Component | null>(null);
     return (
         <div className={styles.root}>
-            <section className={styles.section}>
-                <h2>Button</h2>
-                <section className={styles.section}>
-                    <h4>Primary button</h4>
-                    <Button>Click me</Button>
-                    <Button icon={<BulbIcon />}>Click me</Button>
-                    <Button icon={<CalendarIcon />} />
-                    <Button disabled>Try clicking</Button>
-                </section>
-                <section className={styles.section}>
-                    <h4>Secondary button</h4>
-                    <Button type="secondary">Click me</Button>
-                </section>
-                <section className={styles.section}>
-                    <h4>Tertiary button</h4>
-                    <Button type="tertiary">Click me</Button>
-                </section>
-            </section>
-            <section className={styles.section}>
-                <h2>Tag</h2>
-                <section className={styles.section}>
-                    <h4>Squared</h4>
-                    <Tag>Property</Tag>
-                    <Tag icon={<BulbIcon />}>Option</Tag>
-                    <Tag icon={<CalendarIcon />} />
-                    <h4>Colors</h4>
-                    <Tag color="success">Success</Tag>
-                    <Tag color="success" icon={<BulbIcon />}>
-                        Success
-                    </Tag>
-                    <Tag color="warning">Warning</Tag>
-                    <Tag color="warning" icon={<BulbIcon />}>
-                        Warning
-                    </Tag>
-                    <Tag color="danger">Danger</Tag>
-                    <Tag color="danger" icon={<BulbIcon />}>
-                        Danger
-                    </Tag>
-                </section>
-                <section className={styles.section}>
-                    <h4>Rounded</h4>
-                    <Tag type="round">Property</Tag>
-                    <Tag type="round" icon={<BulbIcon />}>
-                        Option
-                    </Tag>
-                    <Tag type="round" icon={<CalendarIcon />} />
-                    <h4>Colors</h4>
-                    <Tag type="round" color="success">
-                        Success
-                    </Tag>
-                    <Tag type="round" color="success" icon={<BulbIcon />}>
-                        Success
-                    </Tag>
-                    <Tag type="round" color="warning">
-                        Warning
-                    </Tag>
-                    <Tag type="round" color="warning" icon={<BulbIcon />}>
-                        Warning
-                    </Tag>
-                    <Tag type="round" color="danger">
-                        Danger
-                    </Tag>
-                    <Tag type="round" color="danger" icon={<BulbIcon />}>
-                        Danger
-                    </Tag>
-                </section>
-            </section>
+            <div className={styles.menu}>
+                <h2>Components</h2>
+                <ul className={styles.componentList}>
+                    {componentChoices.map((componentChoice) => (
+                        <li
+                            key={componentChoice.value}
+                            className={styles.componentElement}
+                            onClick={() => {
+                                setComponent(componentChoice.value);
+                            }}
+                        >
+                            <button
+                                className={classnames(styles.componentButton, {
+                                    [styles.selected]:
+                                        componentChoice.value === component,
+                                })}
+                            >
+                                {componentChoice.label}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <div className={styles.demoArea}>
+                <ComponentDemo component={component} />
+            </div>
         </div>
     );
 };
