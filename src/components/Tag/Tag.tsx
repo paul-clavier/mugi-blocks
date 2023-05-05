@@ -5,16 +5,29 @@ import styles from "./Tag.module.css";
 interface TagProps {
     className?: string;
     type?: "square" | "round";
+    color?: "primary" | "success" | "warning" | "danger";
     icon?: ReactElement | null;
-    children: ReactNode;
+    children?: ReactNode;
 }
 
-const Tag = ({ className, type = "square", icon, children }: TagProps) => {
+const Tag = ({
+    className,
+    type = "square",
+    color = "primary",
+    icon,
+    children,
+}: TagProps) => {
     return (
         <div
-            className={classnames(className, styles[type], styles.tag, {
-                [styles.iconOnly]: icon && !children,
-            })}
+            className={classnames(
+                className,
+                styles[type],
+                styles[color],
+                styles.tag,
+                {
+                    [styles.iconOnly]: icon && !children,
+                },
+            )}
         >
             {icon}
             {children ? <small>{children}</small> : null}

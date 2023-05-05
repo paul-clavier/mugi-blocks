@@ -33,6 +33,46 @@ const App = () => {
                     <Tag>Property</Tag>
                     <Tag icon={<BulbIcon />}>Option</Tag>
                     <Tag icon={<CalendarIcon />} />
+                    <h4>Colors</h4>
+                    <Tag color="success">Success</Tag>
+                    <Tag color="success" icon={<BulbIcon />}>
+                        Success
+                    </Tag>
+                    <Tag color="warning">Warning</Tag>
+                    <Tag color="warning" icon={<BulbIcon />}>
+                        Warning
+                    </Tag>
+                    <Tag color="danger">Danger</Tag>
+                    <Tag color="danger" icon={<BulbIcon />}>
+                        Danger
+                    </Tag>
+                </section>
+                <section className={styles.section}>
+                    <h4>Rounded</h4>
+                    <Tag type="round">Property</Tag>
+                    <Tag type="round" icon={<BulbIcon />}>
+                        Option
+                    </Tag>
+                    <Tag type="round" icon={<CalendarIcon />} />
+                    <h4>Colors</h4>
+                    <Tag type="round" color="success">
+                        Success
+                    </Tag>
+                    <Tag type="round" color="success" icon={<BulbIcon />}>
+                        Success
+                    </Tag>
+                    <Tag type="round" color="warning">
+                        Warning
+                    </Tag>
+                    <Tag type="round" color="warning" icon={<BulbIcon />}>
+                        Warning
+                    </Tag>
+                    <Tag type="round" color="danger">
+                        Danger
+                    </Tag>
+                    <Tag type="round" color="danger" icon={<BulbIcon />}>
+                        Danger
+                    </Tag>
                 </section>
             </section>
         </div>
