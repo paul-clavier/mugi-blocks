@@ -53,6 +53,21 @@ export const TagDemo = () => (
                     Danger
                 </Tag>
             </section>
+            <section className={styles.section}>
+                <h2>Deletable</h2>
+                <Tag deletable>Property</Tag>
+                <Tag icon={<BulbIcon />} deletable>
+                    Option
+                </Tag>
+                <Tag icon={<CalendarIcon />} deletable />
+                <Tag type="round" deletable>
+                    Property
+                </Tag>
+                <Tag type="round" icon={<BulbIcon />} deletable>
+                    Option
+                </Tag>
+                <Tag type="round" icon={<CalendarIcon />} deletable />
+            </section>
         </section>
     </>
 );
