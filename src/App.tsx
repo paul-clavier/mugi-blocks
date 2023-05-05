@@ -1,12 +1,13 @@
 import styles from "./App.module.css";
 import { Button } from "./components/Button";
+import { Tag } from "./components/Tag";
 import { BulbIcon, CalendarIcon } from "./icons";
 import "./styles/constants.css";
 import "./styles/global.css";
 
 const App = () => {
     return (
-        <div>
+        <div className={styles.root}>
             <section className={styles.section}>
                 <h2>Button</h2>
                 <section className={styles.section}>
@@ -23,6 +24,15 @@ const App = () => {
                 <section className={styles.section}>
                     <h4>Tertiary button</h4>
                     <Button type="tertiary">Click me</Button>
+                </section>
+            </section>
+            <section className={styles.section}>
+                <h2>Tag</h2>
+                <section className={styles.section}>
+                    <h4>Squared</h4>
+                    <Tag>Property</Tag>
+                    <Tag icon={<BulbIcon />}>Option</Tag>
+                    <Tag icon={<CalendarIcon />} />
                 </section>
             </section>
         </div>
