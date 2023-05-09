@@ -1,0 +1,38 @@
+.root {
+    position: relative;
+    width: min-content;
+    height: 2rem;
+}
+
+.badge {
+    width: min-content;
+    padding: 0.15rem 0.45rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.02rem;
+
+    /* Position */
+    position: absolute;
+    right: -1.2rem;
+    top: -0.6rem;
+}
+
+/** Primary */
+.primary {
+    background-color: var(--primary-600);
+    color: var(--primary-100);
+}
+
+/** Secondary */
+.secondary {
+    background-color: var(--primary-100);
+    color: var(--primary-600);
+    border: 0.1rem solid var(--primary-600)
+}
+
+/** Danger */
+.danger {
+    background-color: var(--danger-600);
+    color: var(--danger-100);
+}

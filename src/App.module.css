@@ -58,17 +58,3 @@
     border: var(--border-selected) solid var(--primary-200);
     border-radius: var(--border-radius);
 }
-
-.section {
-    width: fit-content;
-    height: min-content;
-    display: grid;
-    grid-gap: 1rem;
-}
-
-.columnSection {
-    display: flex;
-    flex-direction: row;
-    gap: 4rem;
-    margin-top: 1rem;
-}

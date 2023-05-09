@@ -1,0 +1,17 @@
+.section {
+    width: fit-content;
+    height: min-content;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.columnSection {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    margin-top: 1rem;
+}
+
+.spanWrapper {
+    padding: 0.5rem;
+}

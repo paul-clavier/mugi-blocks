@@ -1,4 +1,4 @@
-import styles from "../../App.module.css";
+import styles from "../../Demo.module.css";
 import { BulbIcon, CalendarIcon } from "../../icons";
 import Button from "./Button";
 

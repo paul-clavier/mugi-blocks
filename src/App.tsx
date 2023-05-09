@@ -1,12 +1,13 @@
 import classnames from "classnames";
 import { useState } from "react";
 import styles from "./App.module.css";
+import { BadgeDemo } from "./components/Badge";
 import { ButtonDemo } from "./components/Button";
 import { TagDemo } from "./components/Tag";
 import "./styles/constants.css";
 import "./styles/global.css";
 
-const components = ["button", "tag"] as const;
+const components = ["button", "tag", "badge"] as const;
 type Component = typeof components[number];
 
 interface ComponentChoice {
@@ -23,6 +24,10 @@ const componentChoices: ComponentChoice[] = [
         value: "tag",
         label: "Tag",
     },
+    {
+        value: "badge",
+        label: "Badge",
+    },
 ];
 
 const ComponentDemo = ({ component }: { component: Component | null }) => {
@@ -32,6 +37,8 @@ const ComponentDemo = ({ component }: { component: Component | null }) => {
             return <ButtonDemo />;
         case "tag":
             return <TagDemo />;
+        case "badge":
+            return <BadgeDemo />;
     }
 };
 
