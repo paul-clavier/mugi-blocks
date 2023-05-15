@@ -1,6 +1,6 @@
 {
     "name": "mugi-blocks",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "React component library",
     "type": "module",
     "source": "src/index.ts",
